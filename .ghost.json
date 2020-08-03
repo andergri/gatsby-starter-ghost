@@ -1,0 +1,10 @@
+{
+  "development": {
+    "apiUrl": "https://koyn-blog.herokuapp.com",
+    "contentApiKey": "59a75c7b20c25391890eac2ba0"
+  },
+  "production": {
+    "apiUrl": "https://koyn-blog.herokuapp.com",
+    "contentApiKey": "59a75c7b20c25391890eac2ba0"
+  }
+}
