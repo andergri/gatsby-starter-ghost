@@ -47,15 +47,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     </Link>
                                 </div>
                                 <div className="site-mast-right">
-                                    { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                                    <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                                 </div>
                             </div>
                             { isHome ?
                                 <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.description}</p>
+                                    <h1 className="site-banner-title" style={{color: '#000', textAlign: 'left' }}>Become crypto smarter in just 5 minutes</h1>
+                                    <p className="site-banner-desc" style={{color: '#000', textAlign: 'left' }}>Get the daily email that makes reading the news actually enjoyable. Stay informed and entertained, for free.</p>
+
+
                                 </div> :
                                 null}
                             <nav className="site-nav">
@@ -64,7 +63,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     <Navigation data={site.navigation} navClass="site-nav-item" />
                                 </div>
                                 <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">About</Link>
+
                                 </div>
                             </nav>
                         </div>
