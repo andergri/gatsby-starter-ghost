@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button"
 import { Typography } from "@material-ui/core"
 import React from "react"
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 
 const MailChimpForm = ({email, result}) => {
 
@@ -14,6 +14,7 @@ const MailChimpForm = ({email, result}) => {
       result = await addToMailchimp(email);
       console.log("result: " + result.result);
       console.log("msg: " + result.msg);
+      navigate(`/thanks-for-subscribing`);
     }
 
     const handleChange = event => {
