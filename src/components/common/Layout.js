@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Navigation } from '.'
+import { Navigation, MailChimpForm } from '.'
 import config from '../../utils/siteConfig'
 
 // Styles
@@ -22,6 +22,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
+
+
 
     return (
         <>
@@ -51,9 +53,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             </div>
                             { isHome ?
                                 <div className="site-banner">
-                                    <h1 className="site-banner-title" style={{color: '#000', textAlign: 'left' }}>Become crypto smarter in just 5 minutes</h1>
-                                    <p className="site-banner-desc" style={{color: '#000', textAlign: 'left' }}>Get the daily email that makes reading the news actually enjoyable. Stay informed and entertained, for free.</p>
+                                    <h1 className="site-banner-title" style={{color: '#000', textAlign: 'left' }}>Stay up to date on blockchain news</h1>
+                                    <p className="site-banner-desc" style={{color: '#000', textAlign: 'left' }}>Get the weekly email that makes reading Web 3.0 news actually enjoyable. Stay informed and entertained, for free.</p>
 
+                                    <MailChimpForm />
 
                                 </div> :
                                 null}
