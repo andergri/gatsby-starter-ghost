@@ -26,9 +26,9 @@ const MailChimpForm = ({email, result}) => {
       <form onSubmit={_handleSubmit} className="site-mailform-box">
         <TextField
           id="outlined-email-input"
-          label="Email Address"
           type="email"
           name="email"
+          placeholder="Email Address"
           autoComplete="email"
           variant="outlined"
           onChange={handleChange}

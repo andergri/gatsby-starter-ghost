@@ -54,7 +54,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             { isHome ?
                                 <div className="site-banner">
                                     <h1 className="site-banner-title" style={{color: '#000', textAlign: 'left' }}>Stay up to date on blockchain news</h1>
-                                    <p className="site-banner-desc" style={{color: '#000', textAlign: 'left' }}>Get the weekly email that makes reading Web 3.0 news actually enjoyable. Stay informed and entertained, for free.</p>
+                                    <p className="site-banner-desc" style={{color: '#000', textAlign: 'left' }}>Get the weekly email that makes reading Web 3.0 & Defi news actually enjoyable. Stay informed and entertained, for free.</p>
 
                                     <MailChimpForm />
 

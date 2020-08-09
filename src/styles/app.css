@@ -725,9 +725,14 @@ h6 {
     max-width: none;
     box-shadow: rgba(50, 50, 93, 0.06) 0px 0px 1em 5px, rgba(0, 0, 0, 0.28) 0px 0.313em 0.938em 1px;
     padding: 10px;
-    background: rgb(98 105 172);
+    background: #30c99c;
     border-radius: 10px;
 }
+
+.MuiOutlinedInput-input {
+  border: 1px #2fc99c solid !important;
+}
+
 
 @media (max-width: 680px) {
     .site-mailform-box {
@@ -761,7 +766,7 @@ h6 {
 }
 
 .MuiButton-containedPrimary {
-  background-color: #6269ac !important;
+  background-color: #30c99c !important;
   box-shadow: none !important;
 }
 
