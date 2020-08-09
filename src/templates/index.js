@@ -24,7 +24,10 @@ const Index = ({ data, location, pageContext }) => {
                     <section className="post-feed">
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
+                            node.id != "Ghost__Post__5bbafb3cb7ec4135e42fce56" ?
+                                <PostCard key={node.id} post={node} />
+                                : <></>
+
                         ))}
                     </section>
                     <Pagination pageContext={pageContext} />

@@ -673,8 +673,8 @@ h6 {
 .site-nav-item {
     display: inline-block;
     padding: 5px 10px;
-    color: #fff;
-    opacity: 0.7;
+    color: #2fc99c;
+    font-weight: bold;
 }
 
 .site-nav-item:hover {
