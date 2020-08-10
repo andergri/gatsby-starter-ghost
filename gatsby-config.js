@@ -3,6 +3,11 @@ const path = require(`path`)
 const config = require(`./src/utils/siteConfig`)
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+
 let ghostConfig
 
 try {
@@ -196,11 +201,10 @@ module.exports = {
         },
        `gatsby-plugin-material-ui`,
        {
-        resolve: `gatsby-plugin-google-analytics`,
-        options: {
-          // The property ID; the tracking code won't be generated without it
-          trackingId: "UA-174914505-1",
-        },
-      }
+          resolve: `gatsby-plugin-google-analytics`,
+          options: {
+            trackingId: process.env.GA_TRACKING_ID
+          }
+        }
     ],
 }
