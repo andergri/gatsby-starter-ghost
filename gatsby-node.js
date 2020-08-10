@@ -64,6 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const authorTemplate = path.resolve(`./src/templates/author.js`)
     const pageTemplate = path.resolve(`./src/templates/page.js`)
     const postTemplate = path.resolve(`./src/templates/post.js`)
+    const emailformTemplate = path.resolve(`./src/templates/emailform.js`)
 
     // Create tag pages
     tags.forEach(({ node }) => {
@@ -197,6 +198,14 @@ exports.createPages = async ({ graphql, actions }) => {
             } else {
                 return `/page`
             }
+        },
+    })
+
+    // Testing Page
+    createPage({
+        path: "email-form",
+        component: emailformTemplate,
+        context: {
         },
     })
 }

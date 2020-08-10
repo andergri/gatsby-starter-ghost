@@ -718,6 +718,12 @@ h6 {
     }
 }
 
+.site-mailform-embeded{
+  width: 24rem;
+  height: 24rem;
+  padding: 0rem;
+}
+
 .site-mailform-title{
   margin: 1rem 0;
   padding: 0;
@@ -745,6 +751,10 @@ h6 {
   color: #fff !important;
   font-size: 12px !important;
   padding-top: 16px !important;
+}
+
+.cblack .MuiOutlinedInput-input {
+  color: #000 !important;
 }
 
 .site-mailform-container .MuiOutlinedInput-root {
