@@ -8,7 +8,10 @@ import PropTypes from 'prop-types'
 import { Link, navigate } from 'gatsby'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
-const MailChimpFormEmbeded = ({email, result}) => {
+const MailChimpFormEmbeded = ({message, email, result}) => {
+
+
+    message = "";
 
     const _handleSubmit = async e => {
       e.preventDefault();
@@ -16,7 +19,7 @@ const MailChimpFormEmbeded = ({email, result}) => {
       result = await addToMailchimp(email);
       console.log("result: " + result.result);
       console.log("msg: " + result.msg);
-      navigate(`/thanks-for-subscribing`);
+      navigate(`/subscribed`);
     }
 
     const handleChange = event => {
@@ -28,6 +31,9 @@ const MailChimpFormEmbeded = ({email, result}) => {
     return (
       <>
       <div className="site-mailform-embeded">
+      { message ?
+        <p className="site-mailform-p" style={{color: '#000', textAlign: 'left' }}>Thank you for subscribing with us.</p>  :
+      <>
       <h1 className="site-mailform-title" style={{fontSize: '3rem', color: '#000', textAlign: 'left', paddingBottom: '6px', borderBottom: "2px solid #000" }}>Newsletter</h1>
       <p className="site-mailform-p" style={{color: '#000', textAlign: 'left' }}>Subscribe to our newsletter for the latest crypto news, enterprise solutions, developer resources, and more.</p>
       <form onSubmit={_handleSubmit} className="site-mailform-container cblack" style={{backgroundColor: '#FFF', color: '#000 !important'}}>
@@ -46,6 +52,8 @@ const MailChimpFormEmbeded = ({email, result}) => {
           <ArrowForwardIcon color="primary" fontSize="large"/>
         </IconButton>
       </form>
+      </>
+      }
       </div>
       </>
     )
@@ -54,6 +62,7 @@ const MailChimpFormEmbeded = ({email, result}) => {
 MailChimpFormEmbeded.propTypes = {
   state: PropTypes.arrayOf(
       PropTypes.shape({
+          message: PropTypes.string,
           email: PropTypes.string,
           result: PropTypes.string,
       })

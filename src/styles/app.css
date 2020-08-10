@@ -718,6 +718,13 @@ h6 {
     }
 }
 
+.site-subscribed{
+  width: 24rem;
+  height: 24rem;
+  padding: 6rem 0rem;
+  text-align: center;
+}
+
 .site-mailform-embeded{
   width: 24rem;
   height: 24rem;
