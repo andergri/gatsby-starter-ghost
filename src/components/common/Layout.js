@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Navigation, MailChimpForm } from '.'
+import { Navigation, MailChimpForm, MailChimpFormInline } from '.'
 import config from '../../utils/siteConfig'
 
 // Styles
@@ -80,13 +80,16 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                 <div className="viewport-bottom">
                     {/* The footer at the very bottom of the screen */}
+
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2020
+                                <h1 className="site-mailform-title" style={{color: '#FFF', textAlign: 'left', fontSize: '1.5rem' }}>Resources</h1>
+                                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                                <Link to="/">{site.title} © 2020</Link>
                             </div>
                             <div className="site-foot-nav-right">
-                                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                                <MailChimpFormInline />
                             </div>
                         </div>
                     </footer>

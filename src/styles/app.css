@@ -718,6 +718,47 @@ h6 {
     }
 }
 
+.site-mailform-title{
+  margin: 1rem 0;
+  padding: 0;
+  color: rgb(47 201 156);
+  font-size: 2.5rem;
+  line-height: 1.1em;
+}
+
+.site-mailform-p{
+  width: 25rem;
+  line-height: 2rem;
+}
+
+.site-mailform-container{
+  border: 1px solid #000;
+  display: flex;
+  border: 1px solid #000;
+  display: flex;
+  width: 20rem;
+  background-color: hsla(0,0%,62%,.1);
+}
+
+.site-mailform-container .MuiOutlinedInput-input {
+  border: none !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  padding-top: 16px !important;
+}
+
+.site-mailform-container .MuiOutlinedInput-root {
+  border-radius: 0px !important;
+}
+
+.site-mailform-container .MuiOutlinedInput-notchedOutline {
+  border-color: #fff0 !important;
+}
+
+.MuiSvgIcon-colorPrimary {
+    color: #2fc99c !important;
+}
+
 .site-mailform-box {
     display: flex;
     margin-top: 40px;
@@ -1036,6 +1077,9 @@ h6 {
     font-size: 1.3rem;
 }
 
+/* Footer Form
+/* ---------------------------------------------------------- */
+
 
 /* Footer
 /* ---------------------------------------------------------- */
@@ -1049,7 +1093,7 @@ h6 {
 
 .site-foot-nav {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
 }
 
@@ -1064,6 +1108,15 @@ h6 {
 
 .site-foot-nav-right a {
     display: inline-block;
+    clear: both;
+    float: left;
+    padding: 2px 5px;
+}
+
+.site-foot-nav-left a {
+    display: inline-block;
+    clear: both;
+    float: left;
     padding: 2px 5px;
 }
 
