@@ -23,7 +23,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
 
-
+    const bgImage = isHome ? { backgroundImage: `url(${site.cover_image})` } : null
 
     return (
         <>
@@ -37,7 +37,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
-                    <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
+
+                    <header className="site-head" style={{ ...site.cover_image && bgImage }}>
                         <div className="container">
                             <div className="site-mast">
                                 <div className="site-mast-left">
@@ -49,6 +50,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     </Link>
                                 </div>
                                 <div className="site-mast-right">
+                                  <nav className="site-nav">
+                                      <div className="site-nav-left">
+                                          {/* The navigation items as setup in Ghost */}
+                                      </div>
+                                      <div className="site-nav-right">
+                                          { isHome ?  null: <Navigation data={site.navigation} navClass="site-nav-item" />  }
+                                      </div>
+                                  </nav>
                                 </div>
                             </div>
                             { isHome ?
@@ -59,15 +68,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
                                 </div> :
                                 null}
-                            <nav className="site-nav">
-                                <div className="site-nav-left">
-                                    {/* The navigation items as setup in Ghost */}
-                                    { isHome ?  null: <Navigation data={site.navigation} navClass="site-nav-item" />  }
-                                </div>
-                                <div className="site-nav-right">
-
-                                </div>
-                            </nav>
                         </div>
                     </header>
 
