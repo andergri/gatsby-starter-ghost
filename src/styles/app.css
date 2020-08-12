@@ -672,7 +672,7 @@ h6 {
 
 @media (max-width: 500px) {
     .site-head {
-      background: none;
+      background: var(--color-base);
     }
 }
 
