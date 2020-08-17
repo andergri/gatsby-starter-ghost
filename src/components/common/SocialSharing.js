@@ -28,8 +28,8 @@ const SocialSharing = ({ socialConfig, tags }) => {
     const trigger = useScrollTrigger();
 
     return (
-      <Slide appear={false} direction="down" in={!trigger}>
-        <AppBar>
+      <Slide appear={false} direction="up" in={trigger}>
+        <AppBar position="fixed" style={{top: 'auto', bottom: 0 }}>
         <div className="post-social social-share-box">
           <TwitterShareButton url={canonical} className="button is-outlined is-rounded twitter" title={socialConfig.config.title + ' (via ' + socialConfig.twitterHandle + ')'} >
             <span className="icon socialIcon">

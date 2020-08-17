@@ -1300,8 +1300,8 @@ h6 {
     position: fixed;
     right: 4rem;
     z-index: 100;
-    top: 10rem;
-    overflow: hidden; 
+    top: 12rem;
+    overflow: hidden;
   }
 
   .social-share-box button {
@@ -1314,6 +1314,7 @@ h6 {
     .social-share-box {
       position: absolute;
       bottom: 0rem;
+      top: auto;
       background: #fff;
       width: 100%;
       right: 0rem;
@@ -1323,7 +1324,7 @@ h6 {
     .social-share-box button {
       float: left;
       clear: none;
-      margin: 1rem 1.9rem;
+      margin: 1rem 1.6rem;
     }
   }
 
