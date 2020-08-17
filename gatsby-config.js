@@ -41,6 +41,8 @@ if (process.env.NODE_ENV === `production` && config.siteUrl === `http://localhos
 module.exports = {
     siteMetadata: {
         siteUrl: config.siteUrl,
+        twitterHandle: '@readforked',
+		    url: config.siteUrl,
     },
     plugins: [
         /**

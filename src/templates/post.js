@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import { Layout } from '../components/common'
+import { Layout, SocialSharing } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -27,6 +27,15 @@ const Post = ({ data, location }) => {
             </Helmet>
             <Layout>
                 <div className="container">
+                    <SocialSharing
+                      socialConfig={{
+                        twitterHandle: "@readforked",
+                        config: {
+                          path: `${location.pathname}`,
+                          title: `${post.title}`
+                        },
+                      }}
+                    />
                     <article className="content">
                         { post.feature_image ?
                             <figure className="post-feature-image">

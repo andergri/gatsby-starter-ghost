@@ -1295,3 +1295,40 @@ h6 {
   .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
     margin: -2.25em 0 3em;
   }
+
+  .social-share-box {
+    position: fixed;
+    right: 4rem;
+    z-index: 100;
+  }
+
+  .social-share-box button {
+    float: left;
+    clear: left;
+    margin: 6px;
+  }
+
+  @media (max-width: 500px) {
+    .social-share-box {
+      position: fixed;
+      bottom: 0rem;
+      background: #fff;
+      width: 100%;
+      right: 0rem;
+      height: 5rem;
+    }
+
+    .social-share-box button {
+      float: left;
+      clear: none;
+      margin: 1rem 2rem;
+    }
+  }
+
+  .socialIcon{
+    padding: 6px;
+  }
+
+  .MuiSvgIcon-fontSizeLarge {
+    font-size: 3.0rem !important;
+}
