@@ -31,7 +31,7 @@ const SocialSharing = ({ socialConfig, tags }) => {
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar>
         <div className="post-social social-share-box">
-          <TwitterShareButton url={canonical} className="button is-outlined is-rounded twitter" title={socialConfig.config.title} via={socialConfig.twitterHandle.split('@').join('')} hashtags={tags} >
+          <TwitterShareButton url={canonical} className="button is-outlined is-rounded twitter" title={socialConfig.config.title + ' (via ' + socialConfig.twitterHandle + ')'} >
             <span className="icon socialIcon">
               <TwitterIcon fontSize="large" style={{ color: '#15171b' }} />
             </span>
