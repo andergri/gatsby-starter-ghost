@@ -11,6 +11,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
 import {
 	FacebookShareButton,
 	GooglePlusShareButton,
@@ -28,37 +29,35 @@ const SocialSharing = ({ socialConfig, tags }) => {
     const trigger = useScrollTrigger();
 
     return (
-      <Slide appear={false} direction="up" in={trigger}>
-        <AppBar position="fixed" style={{top: 'auto', bottom: 0 }}>
+
         <div className="post-social social-share-box">
           <TwitterShareButton url={canonical} className="button is-outlined is-rounded twitter" title={socialConfig.config.title + ' (via ' + socialConfig.twitterHandle + ')'} >
-            <span className="icon socialIcon">
-              <TwitterIcon fontSize="large" style={{ color: '#15171b' }} />
-            </span>
+							<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
+			          <TwitterIcon fontSize="large" style={{ color: '#15171b' }} />
+			        </IconButton>
           </TwitterShareButton>
           <LinkedinShareButton url={canonical} className="button is-outlined is-rounded linkedin" title={socialConfig.config.title} >
-            <span className="icon socialIcon">
-              <LinkedInIcon fontSize="large" style={{ color: '#15171b' }}/>
-            </span>
+							<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
+								<LinkedInIcon fontSize="large" style={{ color: '#15171b' }}/>
+							</IconButton>
           </LinkedinShareButton>
           <RedditShareButton url={canonical} className="button is-outlined is-rounded reddit" title={socialConfig.config.title} >
-            <span className="icon socialIcon">
-              <RedditIcon fontSize="large" style={{ color: '#15171b'}}/>
-            </span>
+							<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
+								<RedditIcon fontSize="large" style={{ color: '#15171b'}}/>
+							</IconButton>
           </RedditShareButton>
           <FacebookShareButton openShareDialogOnClick={true} url={canonical} className="button is-outlined is-rounded facebook" >
-            <span className="icon socialIcon">
-              <FacebookIcon fontSize="large" style={{ color: '#15171b' }}/>
-            </span>
+							<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
+								<FacebookIcon fontSize="large" style={{ color: '#15171b' }}/>
+							</IconButton>
           </FacebookShareButton>
           <WhatsappShareButton url={canonical} className="button is-outlined is-rounded whatsapp" title={socialConfig.config.title} >
-            <span className="icon socialIcon">
-              <WhatsAppIcon fontSize="large" style={{ color: '#15171b' }}/>
-            </span>
+							<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
+								<WhatsAppIcon fontSize="large" style={{ color: '#15171b' }}/>
+							</IconButton>
           </WhatsappShareButton>
         </div>
-        </AppBar>
-      </Slide>
+
     )
 }
 
