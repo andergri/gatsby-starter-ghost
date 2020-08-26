@@ -4,8 +4,9 @@ import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Navigation, MailChimpForm, MailChimpFormInline } from '.'
+import { Navigation, MailChimpForm, MailChimpFormInline, SocialInline, SocialMain } from '.'
 import config from '../../utils/siteConfig'
+// import DiscordIcon from '../../static/images/icons/discord';
 
 // Styles
 import '../../styles/app.css'
@@ -16,7 +17,7 @@ import '../../styles/app.css'
 * The Layout component wraps around each page and template.
 * It also provides the header, footer as well as the main
 * styles, and meta data for each page.
-*
+* <Navigation data={site.navigation} navClass="site-nav-item" />
 */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
@@ -55,8 +56,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                           {/* The navigation items as setup in Ghost */}
                                       </div>
                                       <div className="site-nav-right">
-                                          { isHome ?  null: <Navigation data={site.navigation} navClass="site-nav-item" />  }
+                                          { isHome ?  null : <SocialMain />  }
                                       </div>
+
                                   </nav>
                                 </div>
                             </div>
@@ -84,9 +86,12 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <h1 className="site-mailform-title" style={{color: '#FFF', textAlign: 'left', fontSize: '1.5rem' }}>Resources</h1>
+                                <h1 className="site-mailform-title">Resources</h1>
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
                                 <Link to="/">{site.title} © 2020</Link>
+                            </div>
+                            <div className="site-foot-nav-right">
+                                <SocialInline />
                             </div>
                             <div className="site-foot-nav-right">
                                 <MailChimpFormInline />

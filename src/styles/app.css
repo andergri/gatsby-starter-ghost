@@ -753,7 +753,7 @@ h6 {
 }
 
 .site-mailform-p{
-  width: 25rem;
+  max-width: 25rem;
   line-height: 2rem;
 }
 
@@ -764,6 +764,20 @@ h6 {
   display: flex;
   width: 20rem;
   background-color: hsla(0,0%,62%,.1);
+}
+
+@media (max-width: 500px) {
+    .site-foot-nav {
+      display: block !important;
+    }
+    .site-foot-nav-left {
+      clear: both;
+      padding: 1rem;
+    }
+    .site-foot-nav-right {
+      clear: both;
+      padding: 1rem;
+    }
 }
 
 .site-mailform-container .MuiOutlinedInput-input {
@@ -1336,6 +1350,12 @@ h6 {
 
   .socialIcon{
     padding: 6px;
+  }
+
+  .socialMedia{
+    float: left;
+    clear: none !important;
+    padding: 0rem !important;
   }
 
   .MuiSvgIcon-fontSizeLarge {
