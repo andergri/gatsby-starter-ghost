@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { Navigation, MailChimpForm, MailChimpFormInline, SocialInline, SocialMain } from '.'
@@ -17,30 +17,35 @@ import config from '../../../utils/siteConfig'
 * styles, and meta data for each page.
 * <Navigation data={site.navigation} navClass="site-nav-item" />
 */
-const CoinPrices = ({ data, children, bodyClass, isHome }) => {
+const CoinPrices = () => {
+    const coinPricesData = useStaticQuery(graphql`
+        query {
+          allCoinPrices {
+            nodes {
+              name
+              symbol
+            }
+          }
+        }
+      `)
+
+    console.log(coinPricesData.allCoinPrices.nodes[0].name)
 
     return (
         <>
             <div className="viewport">
-                <h3>This is simple test</h3>
+                <h3>This is simple test!</h3>
+                {coinPricesData.allCoinPrices.nodes.map(( coin ) => {
+                    return <h3>{coin.name}</h3>
+                })}
+                <h3>a</h3>
+
             </div>
         </>
     )
 }
 
 CoinPrices.propTypes = {
-    children: PropTypes.node.isRequired,
-    bodyClass: PropTypes.string,
-    isHome: PropTypes.bool,
-    data: PropTypes.shape({
-        file: PropTypes.object,
-        allGhostSettings: PropTypes.object.isRequired,
-    }).isRequired,
 }
 
-const CoinPricesQuery = props => (
-     <CoinPrices {...props} />
-
-)
-
-export default CoinPricesQuery
+export default CoinPrices

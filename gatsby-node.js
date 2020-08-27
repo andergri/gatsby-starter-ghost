@@ -1,11 +1,58 @@
 const path = require(`path`)
 const { postsPerPage } = require(`./src/utils/siteConfig`)
 const { paginate } = require(`gatsby-awesome-pagination`)
+const fetch = require(`node-fetch`)
+const CoinGecko = require('coingecko-api');
 
 /**
  * Here is the place where Gatsby creates the URLs for all the
  * posts, tags, pages and authors that we fetched from the Ghost site.
  */
+
+exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
+
+  const result = await fetch(`https://api.coingecko.com/api/v3/coins/list`)
+  const resultData = await result.json()
+
+  // create node for build time data example in the docs
+  resultData.forEach(coin => {
+
+      const node = {
+        name: coin.name,
+        symbol: coin.symbol,
+        id: createNodeId(`Coin-${coin.id}`),
+        internal: {
+          type: "CoinPrices",
+          contentDigest: createContentDigest(coin),
+        },
+      }
+      actions.createNode(node)
+  })
+}
+
+// exports.sourceNodes = async ({
+//   actions: { createNode },
+//   createContentDigest,
+// }) => {
+//
+//   const result = await fetch(`https://api.github.com/repos/gatsbyjs/gatsby`)
+//   const resultData = await result.json()
+//   // create node for build time data example in the docs
+//   createNode({
+//     // nameWithOwner and url are arbitrary fields from the data
+//     nameA: resultData.name,
+//     // required fields
+//     id: `example-build-time-data`,
+//     parent: null,
+//     children: [],
+//     internal: {
+//       type: `food`,
+//       contentDigest: createContentDigest(resultData),
+//     },
+//   })
+// }
+
+
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
 

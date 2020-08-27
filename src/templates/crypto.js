@@ -32,8 +32,8 @@ const Crypto = ({ data, location, pageContext }) => {
 
 Crypto.propTypes = {
     data: PropTypes.shape({
-        allGhostPost: PropTypes.object.isRequired,
-    }).isRequired,
+        allGhostPost: PropTypes.object,
+    }),
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }).isRequired,
