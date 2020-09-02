@@ -34,16 +34,16 @@ const SocialInline = ({email, result}) => {
       <>
       <h1 className="site-mailform-title" style={{ textAlign: 'left' }}>Follow</h1>
       <p className="site-mailform-p" style={{color: '#FFF', textAlign: 'left' }}></p>
-      <Link to="https://twitter.com/readforked" target="_blank" className="socialMedia" >
+			<a href="https://twitter.com/readforked" target="_blank" className="socialMedia" >
       <IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
         <TwitterIcon fontSize="large" style={{ color: '#FFF' }}/>
       </IconButton>
-      </Link>
-			<Link to="https://defipulse.com/defi-list" target="_blank" className="socialMedia" >
+      </a>
+			<a href="https://defipulse.com/defi-list" target="_blank" className="socialMedia" >
 			<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
 				<img src="/images/icons/defipulse.png" style={{ height: '26px', marginTop: '2px' }} alt="Discord" />
 			</IconButton>
-			</Link>
+			</a>
       </>
     )
 }

@@ -10,8 +10,8 @@ const CoinGecko = require('coingecko-api');
  */
 
 exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
-
-  const result = await fetch(`https://api.coingecko.com/api/v3/coins/list`)
+  // https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false
+  const result = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethlend%2Chavven%2Cmaker%2Cuma%2Ccompound-governance-token%2C0x%2Cyearn-finance%2Crepublic-protocol%2Ckyber-network%2Caugur%2Cloopring%2Cbalancer%2Cthorchain%2Ckava%2Cbancor%2Cbzx-protocol%2Ccurve-dao-token%2Caurora-dao%2Cmelon%2Cakropolis&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
   const resultData = await result.json()
 
   // create node for build time data example in the docs
@@ -20,6 +20,12 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
       const node = {
         name: coin.name,
         symbol: coin.symbol,
+        currentPrice: coin.current_price,
+        image: coin.image,
+        marketCap: coin.market_cap,
+        totalVolume: coin.total_volume,
+        priceChange24: coin.price_change_percentage_24h,
+        circulatingSupply: coin.circulating_supply,
         id: createNodeId(`Coin-${coin.id}`),
         internal: {
           type: "CoinPrices",

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Navigation, MailChimpForm, MailChimpFormInline, SocialInline, SocialMain } from '.'
+import { CoinTable, } from '.'
 import config from '../../../utils/siteConfig'
 // import DiscordIcon from '../../static/images/icons/discord';
 
@@ -24,22 +24,22 @@ const CoinPrices = () => {
             nodes {
               name
               symbol
+              currentPrice
+              image
+              marketCap
+              totalVolume
+              priceChange24
+              circulatingSupply
             }
           }
         }
       `)
 
-    console.log(coinPricesData.allCoinPrices.nodes[0].name)
-
     return (
         <>
             <div className="viewport">
-                <h3>This is simple test!</h3>
-                {coinPricesData.allCoinPrices.nodes.map(( coin ) => {
-                    return <h3>{coin.name}</h3>
-                })}
-                <h3>a</h3>
-
+            <h3 class="table_header">Governance Tokens</h3>
+            <CoinTable data={coinPricesData.allCoinPrices.nodes} />
             </div>
         </>
     )

@@ -1361,3 +1361,23 @@ h6 {
   .MuiSvgIcon-fontSizeLarge {
     font-size: 3.0rem !important;
 }
+
+.MuiTableCell-root {
+  font-size: 1.4rem !important;
+  border: none !important;
+}
+
+.MuiTableCell-head {
+  font-weight: 600 !important;
+}
+
+.table_frame {
+  table-layout: unset;
+  white-space: nowrap;
+}
+
+.table_header{
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 2rem 0rem;
+}
