@@ -39,11 +39,6 @@ const SocialInline = ({email, result}) => {
         <TwitterIcon fontSize="large" style={{ color: '#FFF' }}/>
       </IconButton>
       </a>
-			<a href="https://defipulse.com/defi-list" target="_blank" className="socialMedia" >
-			<IconButton color="primary" aria-label="upload picture" component="span" className="icon socialIcon">
-				<img src="/images/icons/defipulse.png" style={{ height: '26px', marginTop: '2px' }} alt="Discord" />
-			</IconButton>
-			</a>
       </>
     )
 }
