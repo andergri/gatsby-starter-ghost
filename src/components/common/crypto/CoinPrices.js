@@ -38,7 +38,7 @@ const CoinPrices = () => {
     return (
         <>
             <div className="viewport">
-            <h3 class="table_header">Governance Tokens</h3>
+            <h3 class="table_header">DeFi Tokens</h3>
             <CoinTable data={coinPricesData.allCoinPrices.nodes} />
             </div>
         </>
