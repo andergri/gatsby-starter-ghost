@@ -64,7 +64,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             </div>
                             { isHome ?
                                 <div className="site-banner">
-                                    <h1 className="site-banner-title" style={{color: '#FFF', textAlign: 'left' }}>Our #DeFi newsletter is coming soon</h1>
+                                    <h1 className="site-banner-title" style={{color: '#FFF', textAlign: 'left' }}>DeFi Simplified</h1>
                                     <p className="site-banner-desc" style={{color: '#FFF', textAlign: 'left' }}>Be the first to get the weekly email that makes reading Defi news actually enjoyable. Stay informed and entertained, for free.</p>
                                     <MailChimpForm />
 
